@@ -29,7 +29,6 @@ import (
 	"github.com/pdfcpu/pdfcpu/pkg/api"
 	"github.com/pdfcpu/pdfcpu/pkg/cli"
 	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/validate"
 	"github.com/pkg/errors"
 )
 
@@ -1411,11 +1410,11 @@ func processAddPropertiesCommand(conf *pdfcpu.Configuration) {
 			os.Exit(1)
 		}
 		k := strings.TrimSpace(ss[0])
-		if !validate.DocumentProperty(k) {
-			fmt.Fprintf(os.Stderr, "property name \"%s\" not allowed!\n", k)
-			fmt.Fprintf(os.Stderr, "usage: %s\n\n", usagePropertiesAdd)
-			os.Exit(1)
-		}
+		//if !validate.DocumentProperty(k) {
+		//	fmt.Fprintf(os.Stderr, "property name \"%s\" not allowed!\n", k)
+		//	fmt.Fprintf(os.Stderr, "usage: %s\n\n", usagePropertiesAdd)
+		//	os.Exit(1)
+		//}
 		v := strings.TrimSpace(ss[1])
 		properties[k] = v
 	}
